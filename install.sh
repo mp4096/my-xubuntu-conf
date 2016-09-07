@@ -2,6 +2,8 @@
 mkdir ~/.fonts/ # prepare fonts installation
 mkdir ~/repos/  # folder for repos
 
+# ==============================================================================
+
 # Install Linux basics
 sudo apt install vim
 sudo apt install git
@@ -47,3 +49,29 @@ StartupNotify=false
 Terminal=false
 Hidden=false
 EOF
+cd ~
+
+# ==============================================================================
+
+# Configure the login screen
+# Hide users, no guest account, manual login
+cat > 10-xubuntu.conf <<EOF
+[Seat:*]
+allow-guest=false
+greeter-show-manual-login=true
+greeter-hide-users=true
+EOF
+sudo mv '10-xubuntu.conf' '/etc/lightdm/lightdm.conf.d/10-xubuntu.conf'
+
+# ==============================================================================
+
+# Configure git to use gnome-keyring
+sudo apt install libgnome-keyring-dev
+sudo make --directory=/usr/share/doc/git/contrib/credential/gnome-keyring
+git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+# Configure git to use vim
+git config --global core.editor vim
+# Configure git to use Meld as a diff tool
+git config --global diff.tool meld
+# Configure git to do simple push
+git config --global push.default simple
