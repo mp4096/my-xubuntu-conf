@@ -1,12 +1,12 @@
 # my-xubuntu-conf
-* Most of the work is done by the shell script `install.sh`.
+* Most of the work is done by the shell script `init.sh`.
   * Download it by pasting this command into the terminal:
   ```sh
-  wget https://raw.githubusercontent.com/mp4096/my-xubuntu-conf/master/install.sh
+  wget https://raw.githubusercontent.com/mp4096/my-xubuntu-conf/master/init.sh
   ```
-  * Run it by typing
+  * Run it by typing (requires su permissions):
   ```sh
-  source install.sh
+  source init.sh
   ```
 * Install fancy typefaces:
   * Download [Fantasque Sans](https://github.com/belluzj/fantasque-sans/releases/latest)
