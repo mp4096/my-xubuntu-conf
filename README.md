@@ -4,7 +4,7 @@
   ```sh
   wget https://raw.githubusercontent.com/mp4096/my-xubuntu-conf/master/init.sh
   ```
-  * Open it and make sure you're ok with its contents.
+  * Open it (`nano init.sh`) and make sure you're ok with its contents.
     Remember that piping downloaded files directly into shell is
     [considered](https://www.seancassidy.me/dont-pipe-to-your-shell.html)
     [harmful](https://jordaneldredge.com/blog/one-way-curl-pipe-sh-install-scripts-can-be-dangerous/).
