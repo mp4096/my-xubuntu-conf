@@ -8,6 +8,7 @@ mkdir ~/repos/  # folder for repos
 sudo apt install vim
 sudo apt install git
 sudo apt install htop
+sudo apt install curl
 sudo apt install gcc  # just in case
 sudo apt install make # just in case
 # Install nice apps
