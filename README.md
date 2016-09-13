@@ -15,8 +15,9 @@
 * Install fancy typefaces:
   * Download [Fantasque Sans](https://github.com/belluzj/fantasque-sans/releases/latest)
     and [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/releases/latest).
-  * Move them to `~/.fonts/`.
-  * Install them by typing `sudo fc-cache -f`.
+  * Untar them by calling `tar -zxvf $filename`.
+  * Move all `*.otf` files to `~/.fonts/`.
+  * Install them by typing `sudo fc-cache -fv`.
 * Python3: Install Anaconda from [here](https://www.continuum.io/downloads#linux).
 * Setup git:
 ```
