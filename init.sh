@@ -19,6 +19,7 @@ sudo apt install keepassx
 sudo apt remove firefox # we'll install Pale Moon instead
 sudo apt install chromium-browser
 sudo apt install texlive-full
+sudo apt install vlc
 # Install dependencies for ksuperkey
 sudo apt install libx11-dev
 sudo apt install libxtst-dev
@@ -37,6 +38,7 @@ rm "atom_installer.deb"
 git clone https://github.com/hanschen/ksuperkey.git ~/repos/ksuperkey
 cd ~/repos/ksuperkey
 make
+mkdir -p ~/.config/autostart/
 # Add it to autostart
 cat > ~/.config/autostart/ksuperkey.desktop <<EOF
 [Desktop Entry]
