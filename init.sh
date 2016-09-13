@@ -86,3 +86,5 @@ git config --global core.editor vim
 git config --global diff.tool meld
 # Configure git to do simple push
 git config --global push.default simple
+# Add a nice log output
+git config --global alias.nicelog "log --graph --full-history --all --color --date=short --pretty=format:'%x1b[0m%h%x09%x1b[33m%d%x1b[32m%x20[%ad] %x1b[0m%s %x1b[36m(%an)'"
