@@ -27,12 +27,20 @@ sudo apt install pkg-config
 
 # Install bash-it
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-source "~/.bash_it/install.sh"
+source ~/.bash_it/install.sh
 
 # Install Atom
 wget -O "atom_installer.deb" "https://atom.io/download/deb"
 sudo dpkg --install "atom_installer.deb"
 rm "atom_installer.deb"
+
+# Install Pale Moon
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/palemoon.list"
+wget "http://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_16.04/Release.key"
+sudo apt-key add - < Release.key
+sudo apt update
+sudo apt install palemoon
+rm Release.key
 
 # Install ksuperkey
 git clone https://github.com/hanschen/ksuperkey.git ~/repos/ksuperkey
