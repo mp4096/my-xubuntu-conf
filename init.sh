@@ -34,6 +34,9 @@ sudo apt install -y libx11-dev
 sudo apt install -y libxtst-dev
 sudo apt install -y pkg-config
 
+# Install Bluetooth audio support (optional)
+sudo apt install -y pulseaudio-module-bluetooth
+
 # Install bash-it
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 source ~/.bash_it/install.sh
