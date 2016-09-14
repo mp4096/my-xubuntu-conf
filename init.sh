@@ -13,26 +13,26 @@ sudo add-apt-repository ppa:unit193/encryption
 sudo apt update
 
 # Install Linux basics
-sudo apt install vim
-sudo apt install git
-sudo apt install htop
-sudo apt install curl
-sudo apt install gcc  # just in case
-sudo apt install make # just in case
+sudo apt install -y vim
+sudo apt install -y git
+sudo apt install -y htop
+sudo apt install -y curl
+sudo apt install -y gcc  # just in case
+sudo apt install -y make # just in case
 # Install nice apps
-sudo apt install git-cola
-sudo apt install meld
-sudo apt install vim-gnome
-sudo apt install keepassx
-sudo apt remove firefox # we'll install Pale Moon instead
-sudo apt install chromium-browser
-sudo apt install texlive-full
-sudo apt install vlc
-sudo apt install veracrypt
+sudo apt install -y git-cola
+sudo apt install -y meld
+sudo apt install -y vim-gnome
+sudo apt install -y keepassx
+sudo apt remove -y firefox # we'll install Pale Moon instead
+sudo apt install -y chromium-browser
+sudo apt install -y texlive-full
+sudo apt install -y vlc
+sudo apt install -y veracrypt
 # Install dependencies for ksuperkey
-sudo apt install libx11-dev
-sudo apt install libxtst-dev
-sudo apt install pkg-config
+sudo apt install -y libx11-dev
+sudo apt install -y libxtst-dev
+sudo apt install -y pkg-config
 
 # Install bash-it
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
@@ -48,7 +48,7 @@ sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/stevenpuss
 wget "http://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_16.04/Release.key"
 sudo apt-key add - < Release.key
 sudo apt update
-sudo apt install palemoon
+sudo apt install -y palemoon
 rm Release.key
 sudo update-alternatives --install /usr/bin/gnome-www-browser gnome-www-browser /usr/bin/palemoon 100
 
@@ -92,7 +92,7 @@ sudo systemctl mask dbus-org.bluez.service
 # ==============================================================================
 
 # Configure git to use gnome-keyring
-sudo apt install libgnome-keyring-dev
+sudo apt install -y libgnome-keyring-dev
 sudo make --directory=/usr/share/doc/git/contrib/credential/gnome-keyring
 git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 # Configure git to use vim
