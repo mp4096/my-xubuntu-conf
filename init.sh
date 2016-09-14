@@ -41,6 +41,7 @@ sudo apt-key add - < Release.key
 sudo apt update
 sudo apt install palemoon
 rm Release.key
+sudo update-alternatives --install /usr/bin/gnome-www-browser gnome-www-browser /usr/bin/palemoon 100
 
 # Install ksuperkey
 git clone https://github.com/hanschen/ksuperkey.git ~/repos/ksuperkey

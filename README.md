@@ -1,4 +1,5 @@
-# my-xubuntu-conf
+# My Xubuntu installation and config
+## Installation
 * Most of the work is done by the shell script `init.sh`.
   * Download it by pasting this command into the terminal:
   ```sh
@@ -24,3 +25,14 @@
 git config --global user.name "ABC"
 git config --global user.email "XYZ"
 ```
+
+## Workarounds and hacks
+(Mostly hardware-specific)
+* Static noise (humming) in headphones output:
+  * Run `alsamixer` in terminal and set `Headphone Mic Boost`
+    to `[dB gain: 10.00, 10.00]`.
+  * References: [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=108081).
+* Xfce mouse cursor disappears after unlock:
+  * Seems to be specific to Intel graphic cards.
+  * Workaround: Press `Ctrl+Alt+F1` and `Ctrl+Alt+F7`.
+  * References: [[1]](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1568604).
