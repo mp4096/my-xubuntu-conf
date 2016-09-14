@@ -92,9 +92,12 @@ sudo make --directory=/usr/share/doc/git/contrib/credential/gnome-keyring
 git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 # Configure git to use vim
 git config --global core.editor vim
-# Configure git to use Meld as a diff tool
+# Configure git to use Meld as a diff and merge tool
 git config --global diff.tool meld
+git config --global merge.tool meld
 # Configure git to do simple push
 git config --global push.default simple
 # Add a nice log output
 git config --global alias.nicelog "log --graph --full-history --all --color --date=short --pretty=format:'%x1b[0m%h%x09%x1b[33m%d%x1b[32m%x20[%ad] %x1b[0m%s %x1b[36m(%an)'"
+# Add a git alias for commit -a -m
+git config --global alias.cam "commit -a -m"
