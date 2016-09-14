@@ -4,6 +4,12 @@ mkdir ~/repos/  # folder for repos
 
 # ==============================================================================
 
+# Add latest git PPA
+sudo add-apt-repository ppa:git-core/ppa
+
+# Update apt repos
+sudo apt update
+
 # Install Linux basics
 sudo apt install vim
 sudo apt install git
