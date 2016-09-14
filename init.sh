@@ -6,6 +6,8 @@ mkdir ~/repos/  # folder for repos
 
 # Add latest git PPA
 sudo add-apt-repository ppa:git-core/ppa
+# Add PPA with VeraCrypt
+sudo add-apt-repository ppa:unit193/encryption
 
 # Update apt repos
 sudo apt update
@@ -26,6 +28,7 @@ sudo apt remove firefox # we'll install Pale Moon instead
 sudo apt install chromium-browser
 sudo apt install texlive-full
 sudo apt install vlc
+sudo apt install veracrypt
 # Install dependencies for ksuperkey
 sudo apt install libx11-dev
 sudo apt install libxtst-dev
