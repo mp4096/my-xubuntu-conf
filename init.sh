@@ -84,11 +84,6 @@ greeter-hide-users=true
 EOF
 sudo mv '10-xubuntu.conf' '/etc/lightdm/lightdm.conf.d/10-xubuntu.conf'
 
-# Disable Bluetooth on startup
-sudo systemctl stop bluetooth.service
-sudo systemctl disable bluetooth.service
-sudo systemctl mask dbus-org.bluez.service
-
 # ==============================================================================
 
 # Configure git to use gnome-keyring

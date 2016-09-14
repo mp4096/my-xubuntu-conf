@@ -36,3 +36,9 @@ git config --global user.email "XYZ"
   * Seems to be specific to Intel graphic cards.
   * Workaround: Press `Ctrl+Alt+F1` and `Ctrl+Alt+F7`.
   * References: [[1]](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1568604).
+* Turn off Bluetooth on startup:
+  * This one is nasty. Basically, you can disable the `systemd`'s Bluetooth service,
+    but then you cannot turn it on quickly (via `blueman`).
+    So we'll modify `rc.local` and activate the corresponding `systemd` service.
+  * Open `/etc/rc.local` as su and add `rfkill block bluetooth` before `exit 0`.
+  * Reenable `rc.local`: `sudo systemctl reenable rc-local`.
