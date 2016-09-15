@@ -29,6 +29,8 @@ sudo apt install -y chromium-browser
 sudo apt install -y texlive-full
 sudo apt install -y vlc
 sudo apt install -y veracrypt
+sudo apt install -y p7zip-full
+sudo apt install -y p7zip-rar
 # Install dependencies for ksuperkey
 sudo apt install -y libx11-dev
 sudo apt install -y libxtst-dev
@@ -102,5 +104,6 @@ git config --global merge.tool meld
 git config --global push.default simple
 # Add a nice log output
 git config --global alias.nicelog "log --graph --full-history --all --color --date=short --pretty=format:'%x1b[0m%h%x09%x1b[33m%d%x1b[32m%x20[%ad] %x1b[0m%s %x1b[36m(%an)'"
-# Add a git alias for commit -a -m
+# Add git aliases for the typing-lazy people
 git config --global alias.cam "commit -a -m"
+git config --global alias.ca "commit -a"
