@@ -42,3 +42,22 @@ git config --global user.email "XYZ"
     So we'll modify `rc.local` and activate the corresponding `systemd` service.
   * Open `/etc/rc.local` as su and add `rfkill block bluetooth` before `exit 0`.
   * Reenable `rc.local`: `sudo systemctl reenable rc-local`.
+* Dell XPS 13 specific: Disable touchpad while typing:
+  * Add the following snippet to `/usr/share/X11/xorg.conf.d/51-synaptics-quirks.conf`:
+  ```
+  # Disable generic Synaptics device, as we're using
+  # "DLL0704:01 06CB:76AE Touchpad"
+  # Having multiple touchpad devices running confuses syndaemon
+  Section "InputClass"
+      Identifier "SynPS/2 Synaptics TouchPad"
+      MatchProduct "SynPS/2 Synaptics TouchPad"
+      MatchIsTouchpad "on"
+      MatchOS "Linux"
+      MatchDevicePath "/dev/input/event*"
+      Option "Ignore" "on"
+  EndSection
+  ```
+  * Restart `lightdm` by typing `sudo systemctl restart lightdm` or reboot.
+  * Now you can configure this functionality either using `syndaemon`
+    or the GUI.
+  * References: [[1]](https://ubuntuforums.org/showthread.php?t=2316240).
