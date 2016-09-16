@@ -108,3 +108,29 @@ git config --global alias.nicelog "log --graph --full-history --all --color --da
 # Add git aliases for the typing-lazy people
 git config --global alias.cam "commit -a -m"
 git config --global alias.ca "commit -a"
+
+# ==============================================================================
+
+# Configure .bashrc
+cat >> ~/.bashrc <<EOF
+
+# Modify Bash It's aliases
+unalias ll
+alias ll="ls -oXh --group-directories-first --time-style=long-iso"
+unalias l
+alias l="ls -X --group-directories-first"
+EOF
+
+# Configure .inputrc
+cat >> ~/.inputrc <<EOF
+# Ctrl to jump to word boundaries
+"\e[1;5D": backward-word  # Ctrl + Arrow left
+"\e[1;5C": forward-word  # Ctrl + Arrow right
+
+# Incremental history search
+"\e[A":history-search-backward  # Arrow up
+"\e[B":history-search-forward  # Arrow down
+
+set show-all-if-ambiguous on
+set completion-ignore-case on
+EOF
