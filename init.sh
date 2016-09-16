@@ -32,6 +32,8 @@ sudo apt install -y vlc
 sudo apt install -y veracrypt
 sudo apt install -y p7zip-full
 sudo apt install -y p7zip-rar
+sudo apt install -y colordiff
+sudo apt install -y trash-cli
 # Install dependencies for ksuperkey
 sudo apt install -y libx11-dev
 sudo apt install -y libxtst-dev
@@ -116,21 +118,54 @@ cat >> ~/.bashrc <<EOF
 
 # Modify Bash It's aliases
 unalias ll
-alias ll="ls -oXh --group-directories-first --time-style=long-iso"
+alias ll='ls -oXh --group-directories-first --time-style=long-iso'
 unalias l
-alias l="ls -X --group-directories-first"
+alias l='ls -X --group-directories-first'
+unalias h
+alias h='cd ~'
+
+# Safety first! Use \rm to access original rm
+alias rm=trash
+
+# Confirmation on overwrite
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
+# Parenting changing perms on root
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# Nice diffs
+alias diff='colordiff'
+
+# Nice mount output
+alias mount='mount | column -t'
+
+# Some convenience stuff
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime='now'
+alias nowdate='date +"%d-%m-%Y"'
+
+# Disable accessibility features to avoid random warnings
+export NO_AT_BRIDGE=1
 EOF
 
 # Configure .inputrc
 cat >> ~/.inputrc <<EOF
-# Ctrl to jump to word boundaries
-"\e[1;5D": backward-word  # Ctrl + Arrow left
-"\e[1;5C": forward-word  # Ctrl + Arrow right
+# Ctrl + Arrow key to jump to word boundaries
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
 
 # Incremental history search
 "\e[A":history-search-backward  # Arrow up
 "\e[B":history-search-forward  # Arrow down
 
 set show-all-if-ambiguous on
-set completion-ignore-case on
 EOF
