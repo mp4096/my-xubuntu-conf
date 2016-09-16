@@ -27,6 +27,7 @@ sudo apt install -y keepassx
 sudo apt remove -y firefox # we'll install Pale Moon instead
 sudo apt install -y chromium-browser
 sudo apt install -y texlive-full
+sudo apt install -y texstudio
 sudo apt install -y vlc
 sudo apt install -y veracrypt
 sudo apt install -y p7zip-full
