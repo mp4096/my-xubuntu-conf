@@ -1,6 +1,8 @@
 # Create directories
-mkdir ~/.fonts/ # prepare fonts installation
-mkdir ~/repos/  # folder for repos
+mkdir ~/.fonts/   # prepare fonts installation
+mkdir ~/repos/    # folder for repos
+mkdir ~/.scripts/ # folder for scripts
+export PATH=$PATH:~/.scripts/
 
 # ==============================================================================
 
@@ -123,6 +125,9 @@ unalias l
 alias l='ls -X --group-directories-first'
 unalias h
 alias h='cd ~'
+
+# Alias for the repos folder
+alias r='cd ~/repos'
 
 # Safety first! Use \rm to access original rm
 alias rm=trash
