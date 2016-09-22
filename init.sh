@@ -118,6 +118,9 @@ git config --global alias.ca "commit -a"
 # Configure .bashrc
 cat >> ~/.bashrc <<EOF
 
+# Change the colour of the virtualenv tag in Powerline
+VIRTUALENV_THEME_PROMPT_COLOR=56
+
 # Modify Bash It's aliases
 unalias ll
 alias ll='ls -oXh --group-directories-first --time-style=long-iso'
