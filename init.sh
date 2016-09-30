@@ -53,6 +53,56 @@ wget -O "atom_installer.deb" "https://atom.io/download/deb"
 sudo dpkg --install "atom_installer.deb"
 rm "atom_installer.deb"
 
+# Install Atom packages
+cat > ~/atom-pkgs.txt <<EOF
+atom-beautify
+atom-cli-diff
+atom-clock
+autocomplete-emojis
+autocomplete-go
+autocomplete-haskell
+editor-stats
+environment
+go-config
+go-get
+haskell-ghc-mod
+highlight-selected
+ide-haskell
+ide-haskell-cabal
+ide-haskell-repl
+ink
+julia-client
+jumpy
+keyboard-localization
+language-fortran
+language-haskell
+language-julia
+language-latex
+language-markdown
+language-matlab-octave
+language-powershell
+language-rust
+latex-completions
+latexer
+linter
+linter-alex
+linter-golinter
+markdown-folder
+markdown-table-formatter
+minimap
+minimap-cursorline
+minimap-git-diff
+minimap-highlight-selected
+minimap-selection
+platformio-ide-terminal
+process-palette
+scroll-sync
+sort-lines
+Zen
+EOF
+apm install --packages-file ~/atom-pkgs.txt
+rm ~/atom-pkgs.txt
+
 # Install Pale Moon
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/palemoon.list"
 wget "http://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_16.04/Release.key"
