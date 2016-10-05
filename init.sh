@@ -162,6 +162,7 @@ git config --global alias.nicelog "log --graph --full-history --all --color --da
 # Add git aliases for the typing-lazy people
 git config --global alias.cam "commit -a -m"
 git config --global alias.ca "commit -a"
+git config --global alias.ca "commit -m"
 
 # ==============================================================================
 
