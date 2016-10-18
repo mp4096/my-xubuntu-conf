@@ -18,6 +18,7 @@ sudo apt update
 sudo apt install -y vim
 sudo apt install -y git
 sudo apt install -y htop
+sudo apt install -y tmux
 sudo apt install -y curl
 sudo apt install -y gcc  # just in case
 sudo apt install -y make # just in case
@@ -216,6 +217,10 @@ alias nowdate='date +"%d-%m-%Y"'
 
 # Disable accessibility features to avoid random warnings
 export NO_AT_BRIDGE=1
+
+# Start tmux on shell startup
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux -2
 EOF
 
 # Configure .inputrc
@@ -233,4 +238,20 @@ cat >> ~/.inputrc <<EOF
 "\e[B":history-search-forward  # Arrow down
 
 set show-all-if-ambiguous on
+EOF
+
+# Configure tmux
+cat >> ~/.tmux.conf <<EOF
+set -g default-terminal "xterm"
+set-option -g xterm-keys on
+set -g mouse on
+set -g history-limit 30000
+bind -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
+bind -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M"
+
+set -g base-index 1
+set-window-option -g pane-base-index 1
+
+bind -n End send-key C-e
+bind -n Home send-key C-a
 EOF
