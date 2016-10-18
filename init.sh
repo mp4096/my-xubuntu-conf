@@ -169,6 +169,12 @@ git config --global alias.ca "commit -m"
 # Configure .bashrc
 cat >> ~/.bashrc <<EOF
 
+# Add Golang env variables
+export GOPATH="$HOME/repos/go"
+export GOROOT="/usr/local/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:$GOBIN"
+
 # Change the colour of the virtualenv tag in Powerline
 VIRTUALENV_THEME_PROMPT_COLOR=56
 
