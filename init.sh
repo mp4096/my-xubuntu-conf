@@ -242,8 +242,8 @@ EOF
 
 # Configure tmux
 cat >> ~/.tmux.conf <<EOF
-set -g default-terminal "xterm"
 set-option -g xterm-keys on
+set-option -g default-terminal "screen-256color"
 set -g mouse on
 set -g history-limit 30000
 bind -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
@@ -251,7 +251,41 @@ bind -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "se
 
 set -g base-index 1
 set-window-option -g pane-base-index 1
+EOF
 
-bind -n End send-key C-e
-bind -n Home send-key C-a
+# Configure vimrc
+cat >> ~/.vimrc <<EOF
+set number
+highlight LineNr term=NONE cterm=NONE ctermfg=DarkBlue
+
+set rtp+=~/anaconda3/lib/python3.5/site-packages/powerline/bindings/vim/
+set laststatus=2
+
+set mouse=a
+
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes work
+    " properly when Vim is used inside tmux and GNU screen.
+    " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
+endif
+
+if &term =~ '^screen'
+    " Page up/down keys
+    " http://sourceforge.net/p/tmux/tmux-code/ci/master/tree/FAQ
+    execute "set t_kP=\e[5;*~"
+    execute "set t_kN=\e[6;*~"
+
+    " Home/end keys
+    map <Esc>OH <Home>
+    map! <Esc>OH <Home>
+    map <Esc>OF <End>
+    map! <Esc>OF <End>
+
+    " Arrow keys
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
 EOF
