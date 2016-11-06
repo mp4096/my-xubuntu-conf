@@ -2,7 +2,7 @@
 mkdir ~/.fonts/   # prepare fonts installation
 mkdir ~/repos/    # folder for repos
 mkdir ~/.scripts/ # folder for scripts
-export PATH=$PATH:~/.scripts/
+export PATH="$PATH:$HOME/.scripts/"
 
 # ==============================================================================
 
@@ -175,6 +175,9 @@ export GOPATH="$HOME/repos/go"
 export GOROOT="/usr/local/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
+
+# Add cargo to the path
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Change the colour of the virtualenv tag in Powerline
 VIRTUALENV_THEME_PROMPT_COLOR=56
