@@ -37,6 +37,8 @@ sudo apt install -y p7zip-full
 sudo apt install -y p7zip-rar
 sudo apt install -y colordiff
 sudo apt install -y trash-cli
+sudo apt install -y graphviz
+sudo apt install -y doxygen
 # Install dependencies for ksuperkey
 sudo apt install -y libx11-dev
 sudo apt install -y libxtst-dev
