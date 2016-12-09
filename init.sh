@@ -39,6 +39,7 @@ sudo apt install -y colordiff
 sudo apt install -y trash-cli
 sudo apt install -y graphviz
 sudo apt install -y doxygen
+sudo apt install -y hunspell
 # Install dependencies for ksuperkey
 sudo apt install -y libx11-dev
 sudo apt install -y libxtst-dev
@@ -76,7 +77,6 @@ ide-haskell-repl
 ink
 julia-client
 jumpy
-keyboard-localization
 language-fortran
 language-haskell
 language-julia
