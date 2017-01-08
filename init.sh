@@ -169,6 +169,23 @@ git config --global alias.ca "commit -m"
 
 # ==============================================================================
 
+# Create a Python startup script
+
+cat >> ~/.pythonstartup.py <<EOF
+import pprint
+import sys
+
+import numpy as np
+import scipy as sp
+
+sys.ps1 = "\033[32m>>> \033[0m"
+sys.ps2 = "\033[32m... \033[0m"
+sys.displayhook = pprint.pprint
+EOF
+
+
+# ==============================================================================
+
 # Configure .bashrc
 cat >> ~/.bashrc <<EOF
 
@@ -180,6 +197,9 @@ export PATH="$PATH:$GOBIN"
 
 # Add cargo to the path
 export PATH="$PATH:$HOME/.cargo/bin"
+
+# Specify Python startup file
+export PYTHONSTARTUP="$HOME/.pythonstartup.py"
 
 # Change the colour of the virtualenv tag in Powerline
 VIRTUALENV_THEME_PROMPT_COLOR=56
