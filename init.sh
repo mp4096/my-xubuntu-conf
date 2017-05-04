@@ -59,14 +59,11 @@ rm "atom_installer.deb"
 
 # Install Atom packages
 cat > ~/atom-pkgs.txt <<EOF
-atom-beautify
-atom-cli-diff
 atom-clock
-autocomplete-emojis
 autocomplete-go
 autocomplete-haskell
+build
 editor-stats
-environment
 go-config
 go-get
 haskell-ghc-mod
@@ -74,9 +71,9 @@ highlight-selected
 ide-haskell
 ide-haskell-cabal
 ide-haskell-repl
-ink
-julia-client
 jumpy
+language-batch
+language-cython
 language-fortran
 language-haskell
 language-julia
@@ -85,20 +82,23 @@ language-markdown
 language-matlab-octave
 language-powershell
 language-rust
-latex-completions
-latexer
+language-x86-64-assembly
 linter
 linter-alex
+linter-clang
+linter-pycodestyle
+linter-pydocstyle
 linter-golinter
 markdown-folder
 markdown-table-formatter
 minimap
 minimap-cursorline
+minimap-find-and-replace
 minimap-git-diff
 minimap-highlight-selected
 minimap-selection
-platformio-ide-terminal
-process-palette
+minimap-titles
+pigments
 scroll-sync
 sort-lines
 Zen
