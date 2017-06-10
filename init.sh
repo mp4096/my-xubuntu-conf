@@ -247,7 +247,7 @@ export NO_AT_BRIDGE=1
 
 # Start tmux on shell startup
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux -2
+[[ -z "$TMUX" ]] && tmux -2
 EOF
 
 # Configure .inputrc
