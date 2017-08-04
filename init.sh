@@ -185,6 +185,16 @@ sys.ps2 = "\033[32m... \033[0m"
 sys.displayhook = pprint.pprint
 EOF
 
+# ==============================================================================
+
+# Install Rust
+curl https://sh.rustup.rs -sSf | sh
+# WARNING: Might not be able to resolve `rustup`, check later
+rustup install nightly
+rustup default nightly
+
+# Install exa
+cargo install --git https://github.com/ogham/exa
 
 # ==============================================================================
 
@@ -213,6 +223,9 @@ unalias l
 alias l='ls -X --group-directories-first'
 unalias h
 alias h='cd ~'
+
+# Add exa aliases
+alias lk='exa -lhUm --git --time-style long-iso'
 
 # Alias for the repos folder
 alias r='cd ~/repos'
