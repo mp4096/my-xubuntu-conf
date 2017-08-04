@@ -225,7 +225,7 @@ unalias h
 alias h='cd ~'
 
 # Add exa aliases
-alias lk='exa -lhUm --git --time-style long-iso'
+alias lk='exa -lhG --sort type'
 
 # Alias for the repos folder
 alias r='cd ~/repos'
