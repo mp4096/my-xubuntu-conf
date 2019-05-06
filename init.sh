@@ -242,7 +242,7 @@ alias cp='cp -i'
 alias ln='ln -i'
 
 # Fuzzy search in history
-alias zz='cat $HISTFILE | rff'
+alias zz='cat $HISTFILE | sort -u | rff'
 
 # Parenting changing perms on root
 alias chown='chown --preserve-root'
