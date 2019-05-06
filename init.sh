@@ -193,8 +193,11 @@ curl https://sh.rustup.rs -sSf | sh
 rustup install nightly
 rustup default nightly
 
-# Install exa
-cargo install --git https://github.com/ogham/exa
+# Install exa, ripgrep, fd and rff
+cargo install exa
+cargo install ripgrep
+cargo install fd-find
+cargo install rff
 
 # ==============================================================================
 
